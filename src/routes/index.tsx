@@ -15,6 +15,7 @@ import {
   type SkinTone,
   type Undertone,
 } from "@/lib/recommendations";
+import { TutorialDiagram } from "@/components/TutorialDiagram";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -438,10 +439,20 @@ function Index() {
   );
 }
 
-const UNIVERSAL_TUTORIALS = [
+const UNIVERSAL_TUTORIALS: {
+  kicker: string;
+  title: string;
+  diagram: import("@/components/TutorialDiagram").DiagramKind;
+  brush: string;
+  product: string;
+  steps: string[];
+}[] = [
   {
     kicker: "Color Match",
+    diagram: "undertone",
     title: "Find Your Undertone in 60 Seconds",
+    brush: "None — just your eyes",
+    product: "Natural daylight",
     steps: [
       "Look at the veins on your inner wrist in natural light.",
       "Blue or purple = cool. Green = warm. A mix of both = neutral.",
@@ -451,18 +462,24 @@ const UNIVERSAL_TUTORIALS = [
   },
   {
     kicker: "The Base",
+    diagram: "foundation",
     title: "Foundation That Looks Like Skin",
+    brush: "Damp Beauty Sponge",
+    product: "Velvet Veil Foundation",
     steps: [
       "Moisturize and wait a full minute before any base product.",
       "Use less than you think — start with a pea-sized amount.",
-      "Apply with a damp sponge in pressing-bouncing motions.",
+      "Apply with a damp sponge in pressing-bouncing motions, working center → outward.",
       "Build only where you need coverage; leave the cheek apples sheer.",
       "Set only the T-zone with powder; leave high points dewy.",
     ],
   },
   {
     kicker: "Eyes",
+    diagram: "eyes",
     title: "The 3-Shadow Eye, Always",
+    brush: "Flat Shader + Fluffy Crease + Pencil",
+    product: "Linear / Lifted / Soft-Focus Quad",
     steps: [
       "Transition shade (lightest matte) in the crease — windshield-wiper motion.",
       "Lid shade (mid-tone) pressed flat onto the entire lid.",
@@ -473,7 +490,10 @@ const UNIVERSAL_TUTORIALS = [
   },
   {
     kicker: "Brows",
+    diagram: "brows",
     title: "Map a Balanced Brow",
+    brush: "Spoolie + Angled Brow Brush",
+    product: "Brow pencil or pomade + clear gel",
     steps: [
       "Start: align a brush vertically from the side of the nose.",
       "Arch: align from nostril through the outer iris — that's your peak.",
@@ -484,7 +504,10 @@ const UNIVERSAL_TUTORIALS = [
   },
   {
     kicker: "Lips",
+    diagram: "lips",
     title: "Long-Wear Lip in 5 Steps",
+    brush: "Lip Brush + small flat brush for clean-up",
+    product: "Suede Pigment Stick + matching liner",
     steps: [
       "Exfoliate gently with a damp washcloth.",
       "Apply a thin balm; blot off excess.",
@@ -495,7 +518,10 @@ const UNIVERSAL_TUTORIALS = [
   },
   {
     kicker: "Set",
+    diagram: "set",
     title: "Lock Everything In",
+    brush: "Setting spray + velvet puff",
+    product: "Finishing powder + setting mist",
     steps: [
       "Press — never sweep — finishing powder only on areas that crease.",
       "Mist setting spray in an X, then a T pattern; let air-dry.",
