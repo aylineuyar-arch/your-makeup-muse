@@ -72,10 +72,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Aura — A Lovable App" },
+      { title: "Aura — A Loveable App" },
       { name: "description", content: "Aura is a personalized makeup recommender built with Lovable — get a precision routine for your unique skin tone, face shape, and eye shape." },
       { name: "author", content: "Built with Lovable" },
-      { property: "og:title", content: "Aura — A Lovable App" },
+      { property: "og:title", content: "Aura — A Loveable App" },
       { property: "og:description", content: "Personalized makeup recommendations built with Lovable." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
