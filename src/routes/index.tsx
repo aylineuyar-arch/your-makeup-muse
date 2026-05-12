@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Aura — Personalized Makeup Recommender" },
+      { title: "Aura — A Lovable App" },
       {
         name: "description",
         content:
