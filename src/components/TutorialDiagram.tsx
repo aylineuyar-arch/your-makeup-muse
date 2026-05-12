@@ -238,11 +238,11 @@ function Eyes() {
       <StepBadge x={94} y={108} n={1} />
       <Caption x={106} y={111}>transition (lightest)</Caption>
 
-      <StepBadge x={132} y={188} n={2} />
-      <Caption x={144} y={191}>lid (mid-tone, press flat)</Caption>
+      <StepBadge x={120} y={196} n={2} />
+      <Caption x={132} y={199}>lid · press flat</Caption>
 
-      <StepBadge x={252} y={172} n={3} />
-      <Caption x={246} y={194} anchor="end">outer V (deepest)</Caption>
+      <StepBadge x={262} y={140} n={3} />
+      <Caption x={272} y={143}>outer V (deepest)</Caption>
 
       {/* windshield-wiper motion arrow on transition */}
       <path d="M90 100 Q 160 86 230 100" stroke={ACCENT} strokeWidth="1.1" fill="none"
@@ -330,7 +330,7 @@ function Lips() {
       <path d="M160 138 L 220 132" stroke={INK} strokeWidth="1.3" markerEnd="url(#tut-arrow)" />
 
       {/* labels */}
-      <Caption x={48} y={108}>liner (matching shade, slightly outside)</Caption>
+      <Caption x={160} y={84} anchor="middle">liner — matching shade, slightly outside the natural line</Caption>
       <Caption x={160} y={206} anchor="middle">apply lipstick from center → outward, blot, powder, reapply</Caption>
     </g>
   );
