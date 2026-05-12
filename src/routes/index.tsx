@@ -3,11 +3,15 @@ import React from "react";
 import { useMemo, useState } from "react";
 import heroImg from "@/assets/hero.jpg";
 import {
+  BRUSH_KIT,
+  EYE_SHAPE_GUIDE,
+  FACE_SHAPE_GUIDE,
   recommend,
   SKIN_SWATCHES,
   type EyeShape,
   type FaceShape,
   type Profile,
+  type SkillLevel,
   type SkinTone,
   type Undertone,
 } from "@/lib/recommendations";
@@ -87,10 +91,13 @@ function Index() {
     undertone: "warm",
     face: "oval",
     eye: "almond",
+    skill: "beginner",
   });
+  const [openFaceGuide, setOpenFaceGuide] = useState(false);
+  const [openEyeGuide, setOpenEyeGuide] = useState(false);
 
   const result = useMemo(() => recommend(profile), [profile]);
-  const profileLabel = `${profile.undertone[0].toUpperCase()}${profile.undertone.slice(1)} undertone · ${profile.face[0].toUpperCase()}${profile.face.slice(1)} face · ${profile.eye[0].toUpperCase()}${profile.eye.slice(1)} eyes`;
+  const profileLabel = `${cap(profile.undertone)} undertone · ${cap(profile.face)} face · ${cap(profile.eye)} eyes · ${cap(profile.skill)}`;
 
   return (
     <div className="min-h-screen bg-canvas text-ink">
@@ -99,9 +106,11 @@ function Index() {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <span className="text-sm font-semibold tracking-[0.2em] uppercase">Aura</span>
           <div className="hidden md:flex gap-8 text-sm text-muted-foreground">
-            <a href="#diagnostic" className="hover:text-ink transition-colors">Consultation</a>
+            <a href="#diagnostic" className="hover:text-ink transition-colors">Profile</a>
             <a href="#kit" className="hover:text-ink transition-colors">Kit</a>
             <a href="#routine" className="hover:text-ink transition-colors">Routine</a>
+            <a href="#brushes" className="hover:text-ink transition-colors">Brushes</a>
+            <a href="#tutorials" className="hover:text-ink transition-colors">Tutorials</a>
           </div>
           <a href="#diagnostic" className="text-xs uppercase tracking-widest font-medium text-accent hover:opacity-70 transition-opacity">Begin →</a>
         </div>
@@ -199,7 +208,25 @@ function Index() {
 
               {/* Face shape */}
               <div>
-                <Label n="03" title="Face Shape" />
+                <Label
+                  n="03"
+                  title="Face Shape"
+                  action={openFaceGuide ? "Close guide" : "Help me figure it out"}
+                  onAction={() => setOpenFaceGuide((v) => !v)}
+                />
+                {openFaceGuide && (
+                  <ShapeGuide
+                    items={FACE_SHAPES.map((f) => ({
+                      id: f.id,
+                      label: f.label,
+                      ...FACE_SHAPE_GUIDE[f.id],
+                    }))}
+                    onPick={(id) => {
+                      setProfile({ ...profile, face: id as FaceShape });
+                      setOpenFaceGuide(false);
+                    }}
+                  />
+                )}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {FACE_SHAPES.map((f) => {
                     const active = profile.face === f.id;
@@ -219,7 +246,25 @@ function Index() {
 
               {/* Eye shape */}
               <div>
-                <Label n="04" title="Eye Shape" />
+                <Label
+                  n="04"
+                  title="Eye Shape"
+                  action={openEyeGuide ? "Close guide" : "Help me figure it out"}
+                  onAction={() => setOpenEyeGuide((v) => !v)}
+                />
+                {openEyeGuide && (
+                  <ShapeGuide
+                    items={EYE_SHAPES.map((e) => ({
+                      id: e.id,
+                      label: e.label,
+                      ...EYE_SHAPE_GUIDE[e.id],
+                    }))}
+                    onPick={(id) => {
+                      setProfile({ ...profile, eye: id as EyeShape });
+                      setOpenEyeGuide(false);
+                    }}
+                  />
+                )}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {EYE_SHAPES.map((e) => {
                     const active = profile.eye === e.id;
@@ -231,6 +276,31 @@ function Index() {
                       >
                         <EyeIcon shape={e.id} />
                         <span className="text-xs uppercase tracking-widest font-medium">{e.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Skill level */}
+              <div>
+                <Label n="05" title="Skill Level" />
+                <div className="grid grid-cols-3 gap-3">
+                  {(["beginner", "intermediate", "expert"] as SkillLevel[]).map((s) => {
+                    const active = profile.skill === s;
+                    const hint = s === "beginner"
+                      ? "6 essential steps"
+                      : s === "intermediate"
+                      ? "Full routine + pro tips"
+                      : "Full routine + expert moves";
+                    return (
+                      <button
+                        key={s}
+                        onClick={() => setProfile({ ...profile, skill: s })}
+                        className={`px-4 py-4 rounded-md text-left transition-all border ${active ? "border-accent bg-card" : "border-border bg-card hover:border-ink/40"}`}
+                      >
+                        <p className="text-sm font-medium">{cap(s)}</p>
+                        <p className="text-xs text-muted-foreground mt-1">{hint}</p>
                       </button>
                     );
                   })}
@@ -263,21 +333,87 @@ function Index() {
       <section id="routine" className="pb-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-surface rounded-2xl p-8 md:p-16 border border-border">
-            <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-4 font-medium">No. 04</p>
-            <h3 className="text-3xl font-medium mb-12 tracking-tight">The Application Protocol</h3>
-            <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
+            <div className="flex items-baseline justify-between mb-12 flex-wrap gap-4">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-4 font-medium">No. 04</p>
+                <h3 className="text-3xl font-medium tracking-tight">The Application Protocol</h3>
+              </div>
+              <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">{cap(profile.skill)} · {result.routine.length} steps</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
               {result.routine.map((step, i) => (
                 <div key={i} className="flex gap-6">
                   <span className="text-4xl font-light text-accent/40 tabular-nums leading-none pt-1">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <div>
+                  <div className="flex-1">
                     <h4 className="font-medium mb-2">{step.title}</h4>
-                    <p className="text-sm text-muted-foreground text-pretty leading-relaxed">{step.body}</p>
+                    <p className="text-sm text-muted-foreground text-pretty leading-relaxed mb-3">{step.body}</p>
+                    {step.brush && (
+                      <p className="text-[11px] uppercase tracking-widest text-accent/80 mb-3">Tool · {step.brush}</p>
+                    )}
+                    {step.extras && step.extras.length > 0 && (
+                      <div className="space-y-2 mt-3 pt-3 border-t border-border">
+                        {step.extras.map((ex, j) => (
+                          <div key={j} className="text-sm">
+                            <span className="text-[10px] uppercase tracking-widest font-semibold text-accent mr-2">{ex.label}</span>
+                            <span className="text-muted-foreground">{ex.text}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brushes */}
+      <section id="brushes" className="pb-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-12">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-4 font-medium">No. 05</p>
+            <h2 className="text-3xl font-medium tracking-tight mb-2">The Brush Library</h2>
+            <p className="text-sm text-muted-foreground max-w-[60ch]">
+              The right tool does half the work. Build your kit in this order — most beginners only need the first five.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {BRUSH_KIT.map((b, i) => (
+              <div key={b.name} className="p-5 bg-card border border-border rounded-md hover:border-ink/30 transition-colors">
+                <div className="flex items-baseline justify-between mb-3">
+                  <span className="text-[10px] uppercase tracking-widest text-accent font-medium">No. {String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-[10px] uppercase tracking-widest text-muted-foreground">{i < 5 ? "Essential" : "Build-out"}</span>
+                </div>
+                <h4 className="font-medium mb-1">{b.name}</h4>
+                <p className="text-xs text-muted-foreground mb-3">{b.use}</p>
+                <p className="text-xs text-ink leading-relaxed border-t border-border pt-3">{b.technique}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tutorials / Tips */}
+      <section id="tutorials" className="pb-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-12">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-4 font-medium">No. 06</p>
+            <h2 className="text-3xl font-medium tracking-tight mb-2">Universal Tutorials</h2>
+            <p className="text-sm text-muted-foreground max-w-[60ch]">Techniques that hold true regardless of profile.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-px bg-border border border-border rounded-md overflow-hidden">
+            {UNIVERSAL_TUTORIALS.map((t) => (
+              <div key={t.title} className="bg-card p-8">
+                <p className="text-[10px] uppercase tracking-widest text-accent mb-3 font-medium">{t.kicker}</p>
+                <h4 className="text-lg font-medium mb-3">{t.title}</h4>
+                <ol className="space-y-2 text-sm text-muted-foreground leading-relaxed list-decimal list-inside">
+                  {t.steps.map((s, i) => <li key={i}>{s}</li>)}
+                </ol>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -293,10 +429,115 @@ function Index() {
   );
 }
 
-function Label({ n, title }: { n: string; title: string }) {
+const UNIVERSAL_TUTORIALS = [
+  {
+    kicker: "Color Match",
+    title: "Find Your Undertone in 60 Seconds",
+    steps: [
+      "Look at the veins on your inner wrist in natural light.",
+      "Blue or purple = cool. Green = warm. A mix of both = neutral.",
+      "Cross-check: silver jewelry flatters cool, gold flatters warm.",
+      "White paper test: against pure white, cool skin looks pink, warm looks yellow, neutral looks beige.",
+    ],
+  },
+  {
+    kicker: "The Base",
+    title: "Foundation That Looks Like Skin",
+    steps: [
+      "Moisturize and wait a full minute before any base product.",
+      "Use less than you think — start with a pea-sized amount.",
+      "Apply with a damp sponge in pressing-bouncing motions.",
+      "Build only where you need coverage; leave the cheek apples sheer.",
+      "Set only the T-zone with powder; leave high points dewy.",
+    ],
+  },
+  {
+    kicker: "Eyes",
+    title: "The 3-Shadow Eye, Always",
+    steps: [
+      "Transition shade (lightest matte) in the crease — windshield-wiper motion.",
+      "Lid shade (mid-tone) pressed flat onto the entire lid.",
+      "Outer-V shade (deepest) only at the outer corner with a pencil brush.",
+      "Blend the seams — never the colors themselves — with a clean fluffy brush.",
+      "Optional: a shimmer pop in the center of the lid catches light.",
+    ],
+  },
+  {
+    kicker: "Brows",
+    title: "Map a Balanced Brow",
+    steps: [
+      "Start: align a brush vertically from the side of the nose.",
+      "Arch: align from nostril through the outer iris — that's your peak.",
+      "Tail: align from nostril through the outer eye corner — stop there.",
+      "Fill with hair-like flicks, lightest at the head, darkest at the arch.",
+      "Set with clear or tinted brow gel brushed up and out.",
+    ],
+  },
+  {
+    kicker: "Lips",
+    title: "Long-Wear Lip in 5 Steps",
+    steps: [
+      "Exfoliate gently with a damp washcloth.",
+      "Apply a thin balm; blot off excess.",
+      "Line just outside the natural lip line with a matching pencil.",
+      "Apply lipstick from the center outward, blot, dust translucent powder, reapply.",
+      "Clean the edges with concealer on a small flat brush for a sharp finish.",
+    ],
+  },
+  {
+    kicker: "Set",
+    title: "Lock Everything In",
+    steps: [
+      "Press — never sweep — finishing powder only on areas that crease.",
+      "Mist setting spray in an X, then a T pattern; let air-dry.",
+      "Carry blotting papers, not powder, for midday touch-ups.",
+      "Refresh cream blush over the day — it revives without cake.",
+    ],
+  },
+];
+
+function cap(s: string) {
+  return s[0].toUpperCase() + s.slice(1);
+}
+
+function Label({ n, title, action, onAction }: { n: string; title: string; action?: string; onAction?: () => void }) {
   return (
     <div className="flex items-baseline justify-between mb-5">
       <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground font-medium">{n} · {title}</span>
+      {action && (
+        <button onClick={onAction} className="text-[10px] uppercase tracking-[0.2em] text-accent hover:opacity-70 transition-opacity font-medium">
+          {action}
+        </button>
+      )}
+    </div>
+  );
+}
+
+function ShapeGuide({
+  items,
+  onPick,
+}: {
+  items: { id: string; label: string; signs: string[]; test: string }[];
+  onPick: (id: string) => void;
+}) {
+  return (
+    <div className="mb-5 p-5 bg-card border border-accent/30 rounded-md space-y-4">
+      <p className="text-xs text-muted-foreground">Read the signs below — pick the one that sounds most like you. The test line is a quick mirror check.</p>
+      <div className="grid md:grid-cols-2 gap-3">
+        {items.map((it) => (
+          <button
+            key={it.id}
+            onClick={() => onPick(it.id)}
+            className="text-left p-4 bg-surface border border-border rounded-md hover:border-accent transition-colors"
+          >
+            <p className="text-sm font-medium mb-2">{it.label}</p>
+            <ul className="text-xs text-muted-foreground space-y-1 mb-3 list-disc list-inside">
+              {it.signs.map((s, i) => <li key={i}>{s}</li>)}
+            </ul>
+            <p className="text-xs text-accent italic">Mirror test → {it.test}</p>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
