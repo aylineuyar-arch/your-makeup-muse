@@ -402,13 +402,22 @@ function Index() {
           <div className="mb-12">
             <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-4 font-medium">No. 06</p>
             <h2 className="text-3xl font-medium tracking-tight mb-2">Universal Tutorials</h2>
-            <p className="text-sm text-muted-foreground max-w-[60ch]">Techniques that hold true regardless of profile.</p>
+            <p className="text-sm text-muted-foreground max-w-[60ch]">Visual maps of where to apply, in which direction, with which brush and product. Techniques that hold true regardless of profile.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-px bg-border border border-border rounded-md overflow-hidden">
             {UNIVERSAL_TUTORIALS.map((t) => (
               <div key={t.title} className="bg-card p-8">
                 <p className="text-[10px] uppercase tracking-widest text-accent mb-3 font-medium">{t.kicker}</p>
-                <h4 className="text-lg font-medium mb-3">{t.title}</h4>
+                <h4 className="text-lg font-medium mb-4">{t.title}</h4>
+                <TutorialDiagram kind={t.diagram} />
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full border border-accent/40 text-accent bg-accent/5">
+                    Brush · {t.brush}
+                  </span>
+                  <span className="text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full border border-border text-muted-foreground">
+                    Product · {t.product}
+                  </span>
+                </div>
                 <ol className="space-y-2 text-sm text-muted-foreground leading-relaxed list-decimal list-inside">
                   {t.steps.map((s, i) => <li key={i}>{s}</li>)}
                 </ol>
