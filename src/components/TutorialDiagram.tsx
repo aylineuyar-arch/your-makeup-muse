@@ -241,8 +241,8 @@ function Eyes() {
       <StepBadge x={120} y={196} n={2} />
       <Caption x={132} y={199}>lid · press flat</Caption>
 
-      <StepBadge x={262} y={140} n={3} />
-      <Caption x={272} y={143}>outer V (deepest)</Caption>
+      <StepBadge x={250} y={140} n={3} />
+      <Caption x={316} y={143} anchor="end">outer V (deepest)</Caption>
 
       {/* windshield-wiper motion arrow on transition */}
       <path d="M90 100 Q 160 86 230 100" stroke={ACCENT} strokeWidth="1.1" fill="none"
