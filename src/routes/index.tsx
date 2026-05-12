@@ -206,7 +206,25 @@ function Index() {
 
               {/* Face shape */}
               <div>
-                <Label n="03" title="Face Shape" />
+                <Label
+                  n="03"
+                  title="Face Shape"
+                  action={openFaceGuide ? "Close guide" : "Help me figure it out"}
+                  onAction={() => setOpenFaceGuide((v) => !v)}
+                />
+                {openFaceGuide && (
+                  <ShapeGuide
+                    items={FACE_SHAPES.map((f) => ({
+                      id: f.id,
+                      label: f.label,
+                      ...FACE_SHAPE_GUIDE[f.id],
+                    }))}
+                    onPick={(id) => {
+                      setProfile({ ...profile, face: id as FaceShape });
+                      setOpenFaceGuide(false);
+                    }}
+                  />
+                )}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {FACE_SHAPES.map((f) => {
                     const active = profile.face === f.id;
@@ -226,7 +244,25 @@ function Index() {
 
               {/* Eye shape */}
               <div>
-                <Label n="04" title="Eye Shape" />
+                <Label
+                  n="04"
+                  title="Eye Shape"
+                  action={openEyeGuide ? "Close guide" : "Help me figure it out"}
+                  onAction={() => setOpenEyeGuide((v) => !v)}
+                />
+                {openEyeGuide && (
+                  <ShapeGuide
+                    items={EYE_SHAPES.map((e) => ({
+                      id: e.id,
+                      label: e.label,
+                      ...EYE_SHAPE_GUIDE[e.id],
+                    }))}
+                    onPick={(id) => {
+                      setProfile({ ...profile, eye: id as EyeShape });
+                      setOpenEyeGuide(false);
+                    }}
+                  />
+                )}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {EYE_SHAPES.map((e) => {
                     const active = profile.eye === e.id;
@@ -238,6 +274,31 @@ function Index() {
                       >
                         <EyeIcon shape={e.id} />
                         <span className="text-xs uppercase tracking-widest font-medium">{e.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Skill level */}
+              <div>
+                <Label n="05" title="Skill Level" />
+                <div className="grid grid-cols-3 gap-3">
+                  {(["beginner", "intermediate", "expert"] as SkillLevel[]).map((s) => {
+                    const active = profile.skill === s;
+                    const hint = s === "beginner"
+                      ? "6 essential steps"
+                      : s === "intermediate"
+                      ? "Full routine + pro tips"
+                      : "Full routine + expert moves";
+                    return (
+                      <button
+                        key={s}
+                        onClick={() => setProfile({ ...profile, skill: s })}
+                        className={`px-4 py-4 rounded-md text-left transition-all border ${active ? "border-accent bg-card" : "border-border bg-card hover:border-ink/40"}`}
+                      >
+                        <p className="text-sm font-medium">{cap(s)}</p>
+                        <p className="text-xs text-muted-foreground mt-1">{hint}</p>
                       </button>
                     );
                   })}
