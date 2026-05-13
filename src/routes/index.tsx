@@ -81,9 +81,9 @@ function ToolIcons({ tools }: { tools: string[] }) {
           <span
             key={t}
             title={t}
-            className={`inline-flex items-center justify-center w-7 h-7 rounded-full text-[10px] font-bold ring-1 ring-white shadow-sm ${TOOL_FALLBACK[t] ?? "bg-stone-400 text-white"}`}
+            className={`inline-flex items-center justify-center h-7 px-2.5 rounded-full text-[10px] font-bold tracking-wide ring-1 ring-white shadow-sm ${TOOL_FALLBACK[t] ?? "bg-stone-400 text-white"}`}
           >
-            {t[0]}
+            {t}
           </span>
         );
       })}
