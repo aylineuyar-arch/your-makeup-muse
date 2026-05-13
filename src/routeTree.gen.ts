@@ -9,55 +9,48 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as AuraRouteImport } from './routes/aura'
+import { Route as IndexRouteImport } from './routes/index'
 
-const PortfolioRoute = PortfolioRouteImport.update({
-  id: '/portfolio',
-  path: '/portfolio',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AuraRoute = AuraRouteImport.update({
   id: '/aura',
   path: '/aura',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
   '/aura': typeof AuraRoute
-  '/portfolio': typeof PortfolioRoute
 }
 export interface FileRoutesByTo {
+  '/': typeof IndexRoute
   '/aura': typeof AuraRoute
-  '/portfolio': typeof PortfolioRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
   '/aura': typeof AuraRoute
-  '/portfolio': typeof PortfolioRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/aura' | '/portfolio'
+  fullPaths: '/' | '/aura'
   fileRoutesByTo: FileRoutesByTo
-  to: '/aura' | '/portfolio'
-  id: '__root__' | '/aura' | '/portfolio'
+  to: '/' | '/aura'
+  id: '__root__' | '/' | '/aura'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
   AuraRoute: typeof AuraRoute
-  PortfolioRoute: typeof PortfolioRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/portfolio': {
-      id: '/portfolio'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof PortfolioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/aura': {
       id: '/aura'
       path: '/aura'
@@ -65,12 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuraRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
   AuraRoute: AuraRoute,
-  PortfolioRoute: PortfolioRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

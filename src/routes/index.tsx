@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
 import auraImg from "@/assets/portfolio-aura.jpg";
 
-export const Route = createFileRoute("/portfolio")({
+export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Aylin Uyar — AI Portfolio" },
