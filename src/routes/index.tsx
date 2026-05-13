@@ -147,11 +147,11 @@ function PortfolioPage() {
         </div>
 
         {/* Project navigation bubbles */}
-        <div className="mt-14">
+        <div className="mt-14 lg:-mx-16 xl:-mx-24">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500 font-medium mb-4">
             Four live projects · jump to →
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
             <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-orange-200 hover:border-orange-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
                 <span className="text-xs uppercase tracking-wider text-orange-700 font-semibold">No. 01</span>
@@ -160,7 +160,7 @@ function PortfolioPage() {
                   Live
                 </span>
               </div>
-              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">AI Job Search Dashboard</div>
+              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">AI Job Search Dashboard</div>
               <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ ATSs</div>
               <ToolIcons tools={["Claude", "Python", "Railway", "ATS"]} />
             </a>
@@ -172,7 +172,7 @@ function PortfolioPage() {
                   Live
                 </span>
               </div>
-              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">Compliance RAG Chatbot</div>
+              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Compliance RAG Chatbot</div>
               <div className="mt-1 text-xs text-stone-600">Financial services · Python</div>
               <ToolIcons tools={["Claude", "Python", "RAG"]} />
             </a>
@@ -184,7 +184,7 @@ function PortfolioPage() {
                   Live
                 </span>
               </div>
-              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">Aura — Makeup Assistant</div>
+              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Aura — Makeup Assistant</div>
               <div className="mt-1 text-xs text-stone-600">Lovable · React · Claude</div>
               <ToolIcons tools={["Lovable", "React", "TypeScript", "Claude"]} />
             </a>
@@ -196,7 +196,7 @@ function PortfolioPage() {
                   Live
                 </span>
               </div>
-              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">AI Customer Service Triage</div>
+              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">AI Customer Service Triage</div>
               <div className="mt-1 text-xs text-stone-600">Claude · Python · NLP routing</div>
               <ToolIcons tools={["Claude", "Python", "Triage", "NLP"]} />
             </a>
