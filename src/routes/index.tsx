@@ -189,12 +189,11 @@ function PortfolioPage() {
               filterable web dashboard.
             </p>
 
-            <div className="grid grid-cols-4 gap-4 border-y border-orange-200/60 py-6">
+            <div className="grid grid-cols-3 gap-4 border-y border-orange-200/60 py-6">
               {[
-                ["286", "Roles / run"],
-                ["130+", "Companies"],
-                ["~3 min", "Pipeline"],
-                ["2", "Scores / role"],
+                ["286", "Roles per run"],
+                ["130+", "Companies tracked"],
+                ["~3 min", "End-to-end pipeline"],
               ].map(([n, l]) => (
                 <div key={l}>
                   <div className="text-2xl md:text-3xl font-light text-orange-900">
@@ -205,6 +204,25 @@ function PortfolioPage() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
+                <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">
+                  Fit Score (0–100)
+                </div>
+                <p className="mt-1.5 text-sm text-stone-700 leading-snug">
+                  How well the role matches background, industry, and stated goals.
+                </p>
+              </div>
+              <div className="p-4 rounded-lg bg-orange-50/60 border border-orange-200">
+                <div className="text-xs uppercase tracking-wider text-orange-700 font-semibold">
+                  Conversion Score (0–100)
+                </div>
+                <p className="mt-1.5 text-sm text-stone-700 leading-snug">
+                  Realistic offer likelihood, calibrated by company type and competitiveness.
+                </p>
+              </div>
             </div>
 
             <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
