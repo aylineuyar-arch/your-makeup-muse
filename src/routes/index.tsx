@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Github } from "lucide-react";
+import { Github, Briefcase, Database, MessageSquare, Workflow, type LucideIcon } from "lucide-react";
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
 import auraLanding from "@/assets/aura-landing.jpg";
 import auraProfile from "@/assets/aura-profile.jpg";
@@ -40,14 +40,19 @@ const TAG_COLORS: Record<string, string> = {
   TanStack: "bg-teal-50 text-teal-800 border-teal-300",
 };
 
-// Real brand logos. simpleicons CDN for most; Lovable uses its own favicon.
-const TOOL_LOGOS: Record<string, { src: string; bg: string }> = {
+// Real brand logos. simpleicons CDN for most; Lovable uses its own favicon; concepts use Lucide icons.
+type ToolLogo = { src?: string; icon?: LucideIcon; bg: string; iconClass?: string };
+const TOOL_LOGOS: Record<string, ToolLogo> = {
   Claude: { src: "https://cdn.simpleicons.org/claude", bg: "bg-orange-50 ring-orange-200" },
   Python: { src: "https://cdn.simpleicons.org/python", bg: "bg-blue-50 ring-blue-200" },
   Railway: { src: "https://cdn.simpleicons.org/railway", bg: "bg-violet-50 ring-violet-200" },
   React: { src: "https://cdn.simpleicons.org/react", bg: "bg-sky-50 ring-sky-200" },
   TypeScript: { src: "https://cdn.simpleicons.org/typescript", bg: "bg-blue-50 ring-blue-200" },
   Lovable: { src: "https://lovable.dev/favicon.ico", bg: "bg-rose-50 ring-rose-200" },
+  ATS: { icon: Briefcase, bg: "bg-amber-50 ring-amber-200", iconClass: "text-amber-700" },
+  RAG: { icon: Database, bg: "bg-emerald-50 ring-emerald-200", iconClass: "text-emerald-700" },
+  NLP: { icon: MessageSquare, bg: "bg-cyan-50 ring-cyan-200", iconClass: "text-cyan-700" },
+  Triage: { icon: Workflow, bg: "bg-indigo-50 ring-indigo-200", iconClass: "text-indigo-700" },
 };
 
 function ToolIcons({ tools }: { tools: string[] }) {
@@ -57,13 +62,18 @@ function ToolIcons({ tools }: { tools: string[] }) {
     <div className="mt-3 flex items-center gap-2">
       {withLogos.map((t) => {
         const logo = TOOL_LOGOS[t]!;
+        const Icon = logo.icon;
         return (
           <span
             key={t}
             title={t}
-            className={`inline-flex items-center justify-center w-7 h-7 rounded-full ring-1 shadow-sm ${logo.bg}`}
+            className={`inline-flex items-center justify-center w-9 h-9 rounded-full ring-1 shadow-sm ${logo.bg}`}
           >
-            <img src={logo.src} alt={t} className="w-4 h-4" loading="lazy" />
+            {Icon ? (
+              <Icon className={`w-5 h-5 ${logo.iconClass ?? ""}`} strokeWidth={2} />
+            ) : (
+              <img src={logo.src} alt={t} className="w-5 h-5" loading="lazy" />
+            )}
           </span>
         );
       })}
