@@ -52,6 +52,8 @@ const TOOL_FALLBACK: Record<string, string> = {
   Lovable: "bg-rose-500 text-white",
   RAG: "bg-emerald-600 text-white",
   ATS: "bg-amber-600 text-white",
+  Triage: "bg-indigo-600 text-white",
+  NLP: "bg-cyan-600 text-white",
 };
 
 function ToolIcons({ tools }: { tools: string[] }) {
@@ -157,9 +159,9 @@ function PortfolioPage() {
         {/* Project navigation bubbles */}
         <div className="mt-14">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500 font-medium mb-4">
-            Three live projects · jump to →
+            Four live projects · jump to →
           </p>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-orange-200 hover:border-orange-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
                 <span className="text-xs uppercase tracking-wider text-orange-700 font-semibold">No. 01</span>
@@ -195,6 +197,18 @@ function PortfolioPage() {
               <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">Aura — Makeup Assistant</div>
               <div className="mt-1 text-xs text-stone-600">Lovable · React · Claude</div>
               <ToolIcons tools={["Lovable", "React", "TypeScript", "Claude"]} />
+            </a>
+            <a href="#project-4" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-indigo-200 hover:border-indigo-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-wider text-indigo-700 font-semibold">No. 04</span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  Live
+                </span>
+              </div>
+              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">AI CS Triage</div>
+              <div className="mt-1 text-xs text-stone-600">Claude · Python · NLP routing</div>
+              <ToolIcons tools={["Claude", "Python", "Triage", "NLP"]} />
             </a>
           </div>
         </div>
@@ -457,6 +471,56 @@ function PortfolioPage() {
                   </figcaption>
                 </figure>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <GradientDivider />
+
+      {/* Project 4 — AI CS Triage */}
+      <section id="project-4" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-indigo-700 font-medium">
+              No. 04 · Built with Claude
+            </p>
+            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
+              AI CS Triage
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Claude", "Python", "NLP", "Routing"].map((t) => (
+                <Tag key={t} label={t} />
+              ))}
+            </div>
+            <a
+              href="https://github.com/aylineuyar-arch/ai-cs-triage"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View repository on GitHub"
+              title="View repository on GitHub"
+              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+            >
+              <Github className="w-4 h-4" />
+              <span>Repository</span>
+            </a>
+          </div>
+
+          <div className="md:col-span-8 space-y-6">
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">
+              An AI triage layer for customer support inboxes — classifies
+              incoming tickets by intent, urgency, and team, then drafts a
+              first-response so human agents start from a working reply
+              instead of a blank box.
+            </p>
+
+            <div className="p-6 rounded-xl bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-200">
+              <p className="text-xs uppercase tracking-wider text-indigo-700 font-semibold mb-2">
+                Screenshots coming soon
+              </p>
+              <p className="text-sm text-stone-700 leading-relaxed">
+                Visuals are being prepared. In the meantime, the repository has the full pipeline, prompts, and evaluation notes.
+              </p>
             </div>
           </div>
         </div>
