@@ -101,6 +101,48 @@ function PortfolioPage() {
             <span className="opacity-60 group-hover:translate-x-0.5 transition-transform">↗</span>
           </a>
         </div>
+
+        {/* Project navigation bubbles */}
+        <div className="mt-14">
+          <p className="text-xs uppercase tracking-[0.3em] text-stone-500 font-medium mb-4">
+            Three live projects · jump to →
+          </p>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-orange-200 hover:border-orange-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-wider text-orange-700 font-semibold">No. 01</span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  Live
+                </span>
+              </div>
+              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">AI Job Search Dashboard</div>
+              <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ ATSs</div>
+            </a>
+            <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-emerald-200 hover:border-emerald-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">No. 02</span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  Live
+                </span>
+              </div>
+              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">Compliance RAG Chatbot</div>
+              <div className="mt-1 text-xs text-stone-600">Financial services · Python</div>
+            </a>
+            <a href="#project-3" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-rose-200 hover:border-rose-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-wider text-rose-700 font-semibold">No. 03</span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  Live
+                </span>
+              </div>
+              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">Aura — Makeup Assistant</div>
+              <div className="mt-1 text-xs text-stone-600">Lovable · React · Claude</div>
+            </a>
+          </div>
+        </div>
       </header>
 
       <GradientDivider />
