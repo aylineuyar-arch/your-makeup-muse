@@ -182,21 +182,9 @@ function PortfolioPage() {
               <div className="mt-1 text-xs text-stone-600">Financial services · Python</div>
               <ToolIcons tools={["Claude", "Python", "RAG"]} />
             </a>
-            <a href="#project-3" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-rose-200 hover:border-rose-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <a href="#project-3" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-indigo-200 hover:border-indigo-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-rose-700 font-semibold">No. 03</span>
-                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  Live
-                </span>
-              </div>
-              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Aura — Makeup Assistant</div>
-              <div className="mt-1 text-xs text-stone-600">Lovable · React · Claude</div>
-              <ToolIcons tools={["Lovable", "React", "TypeScript", "Claude"]} />
-            </a>
-            <a href="#project-4" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-indigo-200 hover:border-indigo-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-              <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-indigo-700 font-semibold">No. 04</span>
+                <span className="text-xs uppercase tracking-wider text-indigo-700 font-semibold">No. 03</span>
                 <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                   Live
@@ -205,6 +193,18 @@ function PortfolioPage() {
               <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">AI Customer Service Triage</div>
               <div className="mt-1 text-xs text-stone-600">Claude · Python · NLP routing</div>
               <ToolIcons tools={["Claude", "Python", "Triage", "NLP"]} />
+            </a>
+            <a href="#project-4" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-rose-200 hover:border-rose-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-wider text-rose-700 font-semibold">No. 04</span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  Live
+                </span>
+              </div>
+              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Aura — Makeup Assistant</div>
+              <div className="mt-1 text-xs text-stone-600">Lovable · React · Claude</div>
+              <ToolIcons tools={["Lovable", "React", "TypeScript", "Claude"]} />
             </a>
           </div>
         </div>
