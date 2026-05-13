@@ -160,7 +160,7 @@ function PortfolioPage() {
                   Live
                 </span>
               </div>
-              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">AI Job Search Dashboard</div>
+              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">AI Job Search Dashboard</div>
               <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ ATSs</div>
               <ToolIcons tools={["Claude", "Python", "Railway", "ATS"]} />
             </a>
@@ -172,7 +172,7 @@ function PortfolioPage() {
                   Live
                 </span>
               </div>
-              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">Compliance RAG Chatbot</div>
+              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Compliance RAG Chatbot</div>
               <div className="mt-1 text-xs text-stone-600">Financial services · Python</div>
               <ToolIcons tools={["Claude", "Python", "RAG"]} />
             </a>
@@ -184,7 +184,7 @@ function PortfolioPage() {
                   Live
                 </span>
               </div>
-              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">Aura — Makeup Assistant</div>
+              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Aura — Makeup Assistant</div>
               <div className="mt-1 text-xs text-stone-600">Lovable · React · Claude</div>
               <ToolIcons tools={["Lovable", "React", "TypeScript", "Claude"]} />
             </a>
@@ -196,7 +196,7 @@ function PortfolioPage() {
                   Live
                 </span>
               </div>
-              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">AI Customer Service Triage</div>
+              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">AI Customer Service Triage</div>
               <div className="mt-1 text-xs text-stone-600">Claude · Python · NLP routing</div>
               <ToolIcons tools={["Claude", "Python", "Triage", "NLP"]} />
             </a>
