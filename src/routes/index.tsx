@@ -478,6 +478,56 @@ function PortfolioPage() {
 
       <GradientDivider />
 
+      {/* Project 4 — AI CS Triage */}
+      <section id="project-4" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-indigo-700 font-medium">
+              No. 04 · Built with Claude
+            </p>
+            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
+              AI CS Triage
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Claude", "Python", "NLP", "Routing"].map((t) => (
+                <Tag key={t} label={t} />
+              ))}
+            </div>
+            <a
+              href="https://github.com/aylineuyar-arch/ai-cs-triage"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View repository on GitHub"
+              title="View repository on GitHub"
+              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
+            >
+              <Github className="w-4 h-4" />
+              <span>Repository</span>
+            </a>
+          </div>
+
+          <div className="md:col-span-8 space-y-6">
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">
+              An AI triage layer for customer support inboxes — classifies
+              incoming tickets by intent, urgency, and team, then drafts a
+              first-response so human agents start from a working reply
+              instead of a blank box.
+            </p>
+
+            <div className="p-6 rounded-xl bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-200">
+              <p className="text-xs uppercase tracking-wider text-indigo-700 font-semibold mb-2">
+                Screenshots coming soon
+              </p>
+              <p className="text-sm text-stone-700 leading-relaxed">
+                Visuals are being prepared. In the meantime, the repository has the full pipeline, prompts, and evaluation notes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <GradientDivider />
+
       {/* Footer */}
       <footer className="mx-auto max-w-6xl px-6 py-16 text-sm text-stone-600">
         <div className="flex flex-wrap justify-between gap-4">
