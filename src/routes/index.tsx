@@ -50,8 +50,8 @@ function Tag({ label }: { label: string }) {
 
 function GradientDivider() {
   return (
-    <div className="mx-auto max-w-5xl px-6">
-      <div className="h-px bg-gradient-to-r from-transparent via-rose-300/60 to-transparent" />
+    <div className="mx-auto max-w-6xl px-6">
+      <div className="h-[2px] bg-gradient-to-r from-transparent via-rose-400 to-transparent" />
     </div>
   );
 }
@@ -61,11 +61,11 @@ function PortfolioPage() {
     <main className="min-h-screen bg-gradient-to-b from-[#fdf8f3] via-[#faf3ec] to-[#f5ede2] text-stone-900">
       {/* Hero */}
       <header className="mx-auto max-w-6xl px-6 pt-20 pb-16 md:pt-28 md:pb-20">
-        <p className="text-xs uppercase tracking-[0.3em] text-rose-700/80 font-medium">
+        <p className="text-sm md:text-base uppercase tracking-[0.35em] text-rose-700/80 font-medium">
           AI Portfolio · 2026
         </p>
         <h1 className="mt-6 text-5xl md:text-7xl font-light leading-[1.05] tracking-tight">
-          Aylin <span className="italic text-rose-800">Uyar</span>
+          Aylin Uyar
         </h1>
 
         <p className="mt-8 max-w-4xl text-lg md:text-2xl text-stone-700 leading-snug font-light">
@@ -113,8 +113,7 @@ function PortfolioPage() {
               No. 01 · Built with Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              Live AI Job Search{" "}
-              <span className="italic text-orange-800">Dashboard</span>
+              Live AI Job Search Dashboard
             </h2>
             <div className="mt-6 flex flex-wrap gap-2">
               {[
@@ -200,8 +199,7 @@ function PortfolioPage() {
               No. 02 · Built with Lovable
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
-              Aura — Makeup{" "}
-              <span className="italic text-rose-800">Assistant</span>
+              Aura — Makeup Assistant
             </h2>
             <div className="mt-6 flex flex-wrap gap-2">
               {["Lovable", "TypeScript", "React", "Claude API", "TanStack"].map(
