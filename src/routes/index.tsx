@@ -148,6 +148,7 @@ function PortfolioPage() {
               </div>
               <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">AI Job Search Dashboard</div>
               <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ ATSs</div>
+              <ToolIcons tools={["Claude", "Python", "Railway", "ATS"]} />
             </a>
             <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-emerald-200 hover:border-emerald-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
@@ -159,6 +160,7 @@ function PortfolioPage() {
               </div>
               <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">Compliance RAG Chatbot</div>
               <div className="mt-1 text-xs text-stone-600">Financial services · Python</div>
+              <ToolIcons tools={["Claude", "Python", "RAG"]} />
             </a>
             <a href="#project-3" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-rose-200 hover:border-rose-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
@@ -170,6 +172,7 @@ function PortfolioPage() {
               </div>
               <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">Aura — Makeup Assistant</div>
               <div className="mt-1 text-xs text-stone-600">Lovable · React · Claude</div>
+              <ToolIcons tools={["Lovable", "React", "TypeScript", "Claude"]} />
             </a>
           </div>
         </div>
