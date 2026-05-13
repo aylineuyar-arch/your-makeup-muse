@@ -59,25 +59,30 @@ function ToolIcons({ tools }: { tools: string[] }) {
   const withLogos = tools.filter((t) => TOOL_LOGOS[t]);
   if (withLogos.length === 0) return null;
   return (
-    <div className="mt-3 flex items-center gap-2">
-      {withLogos.map((t) => {
-        const logo = TOOL_LOGOS[t]!;
-        const Icon = logo.icon;
-        return (
-          <span
-            key={t}
-            title={t}
-            className={`inline-flex items-center justify-center w-9 h-9 rounded-full ring-1 shadow-sm ${logo.bg}`}
-          >
-            {Icon ? (
-              <Icon className={`w-5 h-5 ${logo.iconClass ?? ""}`} strokeWidth={2} />
-            ) : (
-              <img src={logo.src} alt={t} className="w-5 h-5" loading="lazy" />
-            )}
-          </span>
-        );
-      })}
-    </div>
+    <TooltipProvider delayDuration={100}>
+      <div className="mt-3 flex items-center gap-2">
+        {withLogos.map((t) => {
+          const logo = TOOL_LOGOS[t]!;
+          const Icon = logo.icon;
+          return (
+            <Tooltip key={t}>
+              <TooltipTrigger asChild>
+                <span
+                  className={`inline-flex items-center justify-center w-9 h-9 rounded-full ring-1 shadow-sm cursor-default ${logo.bg}`}
+                >
+                  {Icon ? (
+                    <Icon className={`w-5 h-5 ${logo.iconClass ?? ""}`} strokeWidth={2} />
+                  ) : (
+                    <img src={logo.src} alt={t} className="w-5 h-5" loading="lazy" />
+                  )}
+                </span>
+              </TooltipTrigger>
+              <TooltipContent>{t}</TooltipContent>
+            </Tooltip>
+          );
+        })}
+      </div>
+    </TooltipProvider>
   );
 }
 
