@@ -359,18 +359,43 @@ function PortfolioPage() {
               <li className="flex gap-3"><span className="text-rose-500">▸</span>Range beyond backend pipelines — same operator mindset, consumer-facing delivery</li>
             </ul>
 
-            <figure className="mt-8">
-              <img
-                src={auraImg}
-                alt="Aura — editorial landing page"
-                className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
-                loading="lazy"
-              />
-              <figcaption className="mt-3 text-xs text-stone-500 italic">
-                Aura — editorial landing page, live at
-                face-harmony-helper.lovable.app.
-              </figcaption>
-            </figure>
+            <div className="mt-8 space-y-4">
+              <figure>
+                <img
+                  src={auraLanding}
+                  alt="Aura — editorial landing page"
+                  className="w-full rounded-lg shadow-lg ring-1 ring-stone-200"
+                  loading="lazy"
+                />
+                <figcaption className="mt-2 text-xs text-stone-500 italic">
+                  Editorial landing page — face-harmony-helper.lovable.app
+                </figcaption>
+              </figure>
+              <div className="grid grid-cols-2 gap-4">
+                <figure>
+                  <img
+                    src={auraProfile}
+                    alt="Aura — The Profile, real-time personalization"
+                    className="w-full rounded-lg shadow-md ring-1 ring-stone-200"
+                    loading="lazy"
+                  />
+                  <figcaption className="mt-2 text-xs text-stone-500 italic">
+                    The Profile — real-time personalization
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src={auraTutorials}
+                    alt="Aura — Universal Tutorials, visual technique guides"
+                    className="w-full rounded-lg shadow-md ring-1 ring-stone-200"
+                    loading="lazy"
+                  />
+                  <figcaption className="mt-2 text-xs text-stone-500 italic">
+                    Universal Tutorials — visual technique guides
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
           </div>
         </div>
       </section>
