@@ -253,8 +253,8 @@ function PortfolioPage() {
           <div>
             Aylin Uyar · AI Portfolio · 2026
             <div className="mt-1">
-              <Link to="/" className="underline underline-offset-4">
-                ← Back to Aura
+              <Link to="/aura" className="underline underline-offset-4">
+                View Aura app →
               </Link>
             </div>
           </div>
