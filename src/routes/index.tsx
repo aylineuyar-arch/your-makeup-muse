@@ -148,7 +148,7 @@ function PortfolioPage() {
       <GradientDivider />
 
       {/* Project 1 */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <section id="project-1" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-orange-700 font-medium">
@@ -234,7 +234,7 @@ function PortfolioPage() {
       <GradientDivider />
 
       {/* Project 2 */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <section id="project-3" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
