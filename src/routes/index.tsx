@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Github } from "lucide-react";
 import dashboardImg from "@/assets/portfolio-dashboard.jpg";
 import auraLanding from "@/assets/aura-landing.jpg";
 import auraProfile from "@/assets/aura-profile.jpg";
