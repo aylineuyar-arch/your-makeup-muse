@@ -229,9 +229,12 @@ function PortfolioPage() {
               href="https://github.com/aylineuyar-arch/ai-workflow-demo"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-orange-800 hover:text-orange-900 underline underline-offset-4 decoration-orange-400/60"
+              aria-label="View repository on GitHub"
+              title="View repository on GitHub"
+              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-stone-900 text-white hover:bg-stone-700 transition-colors text-xs font-medium"
             >
-              View repository ↗
+              <Github className="w-4 h-4" />
+              <span>Repository</span>
             </a>
           </div>
 
