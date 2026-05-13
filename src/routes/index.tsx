@@ -101,12 +101,54 @@ function PortfolioPage() {
             <span className="opacity-60 group-hover:translate-x-0.5 transition-transform">↗</span>
           </a>
         </div>
+
+        {/* Project navigation bubbles */}
+        <div className="mt-14">
+          <p className="text-xs uppercase tracking-[0.3em] text-stone-500 font-medium mb-4">
+            Three live projects · jump to →
+          </p>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-orange-200 hover:border-orange-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-wider text-orange-700 font-semibold">No. 01</span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  Live
+                </span>
+              </div>
+              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">AI Job Search Dashboard</div>
+              <div className="mt-1 text-xs text-stone-600">Claude · Python · 130+ ATSs</div>
+            </a>
+            <a href="#project-2" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-emerald-200 hover:border-emerald-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-wider text-emerald-700 font-semibold">No. 02</span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  Live
+                </span>
+              </div>
+              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">Compliance RAG Chatbot</div>
+              <div className="mt-1 text-xs text-stone-600">Financial services · Python</div>
+            </a>
+            <a href="#project-3" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-rose-200 hover:border-rose-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-wider text-rose-700 font-semibold">No. 03</span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  Live
+                </span>
+              </div>
+              <div className="mt-3 text-lg font-medium text-stone-900 leading-snug">Aura — Makeup Assistant</div>
+              <div className="mt-1 text-xs text-stone-600">Lovable · React · Claude</div>
+            </a>
+          </div>
+        </div>
       </header>
 
       <GradientDivider />
 
       {/* Project 1 */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <section id="project-1" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-orange-700 font-medium">
@@ -191,12 +233,63 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Project 2 */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      {/* Project 2 — Compliance RAG */}
+      <section id="project-2" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-emerald-700 font-medium">
+              No. 02 · Built with Claude
+            </p>
+            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
+              Compliance RAG Chatbot
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Claude", "Python", "RAG", "Financial Services"].map((t) => (
+                <Tag key={t} label={t} />
+              ))}
+            </div>
+            <a
+              href="https://github.com/aylineuyar-arch/compliance-rag-demo"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-emerald-800 hover:text-emerald-900 underline underline-offset-4 decoration-emerald-400/60"
+            >
+              View repository ↗
+            </a>
+          </div>
+
+          <div className="md:col-span-8 space-y-6">
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">
+              A chatbot that answers <strong className="text-stone-900">financial services compliance questions</strong> by retrieving from internal policy documents and grounding Claude's responses in cited source passages — built to mirror the kind of internal tooling a regulated fintech (Revolut, Ramp, Stripe) actually needs.
+            </p>
+
+            <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+              <li className="flex gap-3"><span className="text-emerald-500">▸</span>Retrieval-augmented generation over policy PDFs — answers cite source passages, not hallucinations</li>
+              <li className="flex gap-3"><span className="text-emerald-500">▸</span>Built for regulated environments where every answer needs an auditable trail</li>
+              <li className="flex gap-3"><span className="text-emerald-500">▸</span>Demonstrates judgment on where LLMs help (synthesis) vs. where they hurt (unsourced claims)</li>
+              <li className="flex gap-3"><span className="text-emerald-500">▸</span>Same operator pattern as the job dashboard: real problem → reliable pipeline → useful output</li>
+            </ul>
+
+            <div className="mt-8 p-6 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200">
+              <p className="text-xs uppercase tracking-wider text-emerald-700 font-semibold mb-2">
+                Why this matters
+              </p>
+              <p className="text-sm text-stone-700 leading-relaxed">
+                Compliance and policy lookups are exactly the kind of high-volume, judgment-heavy workflow where grounded LLM retrieval delivers measurable time savings — directly relevant to ops teams at fintechs operating under FCA, SEC, and multi-jurisdiction frameworks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <GradientDivider />
+
+      {/* Project 3 — Aura */}
+      <section id="project-3" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
-              No. 02 · Built with Lovable
+              No. 03 · Built with Lovable
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               Aura — Makeup Assistant
