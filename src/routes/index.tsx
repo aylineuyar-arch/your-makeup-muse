@@ -332,7 +332,7 @@ function PortfolioPage() {
               Compliance RAG Chatbot
             </h2>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["Claude", "Python", "RAG", "Financial Services"].map((t) => (
+              {["Claude", "Python", "Streamlit", "RAG", "Financial Services"].map((t) => (
                 <Tag key={t} label={t} />
               ))}
             </div>
