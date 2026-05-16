@@ -39,6 +39,7 @@ const TAG_COLORS: Record<string, string> = {
   Lovable: "bg-rose-50 text-rose-800 border-rose-300",
   TypeScript: "bg-sky-50 text-sky-800 border-sky-300",
   TanStack: "bg-teal-50 text-teal-800 border-teal-300",
+  Streamlit: "bg-red-50 text-red-800 border-red-300",
 };
 
 // Real brand logos. simpleicons CDN for most; Lovable uses its own favicon; concepts use Lucide icons.
@@ -50,6 +51,7 @@ const TOOL_LOGOS: Record<string, ToolLogo> = {
   React: { src: "https://cdn.simpleicons.org/react", bg: "bg-sky-50 ring-sky-200" },
   TypeScript: { src: "https://cdn.simpleicons.org/typescript", bg: "bg-blue-50 ring-blue-200" },
   Lovable: { src: "https://lovable.dev/favicon.ico", bg: "bg-rose-50 ring-rose-200" },
+  Streamlit: { src: "https://cdn.simpleicons.org/streamlit", bg: "bg-red-50 ring-red-200" },
   ATS: { icon: Briefcase, bg: "bg-amber-50 ring-amber-200", iconClass: "text-amber-700" },
   RAG: { icon: Database, bg: "bg-emerald-50 ring-emerald-200", iconClass: "text-emerald-700" },
   NLP: { icon: MessageSquare, bg: "bg-cyan-50 ring-cyan-200", iconClass: "text-cyan-700" },
@@ -180,7 +182,7 @@ function PortfolioPage() {
               </div>
               <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Compliance RAG Chatbot</div>
               <div className="mt-1 text-xs text-stone-600">Financial services · Python</div>
-              <ToolIcons tools={["Claude", "Python", "RAG"]} />
+              <ToolIcons tools={["Claude", "Python", "Streamlit", "RAG"]} />
             </a>
             <a href="#project-3" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-indigo-200 hover:border-indigo-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
@@ -330,7 +332,7 @@ function PortfolioPage() {
               Compliance RAG Chatbot
             </h2>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["Claude", "Python", "RAG", "Financial Services"].map((t) => (
+              {["Claude", "Python", "Streamlit", "RAG", "Financial Services"].map((t) => (
                 <Tag key={t} label={t} />
               ))}
             </div>
