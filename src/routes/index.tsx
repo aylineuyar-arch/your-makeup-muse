@@ -350,12 +350,71 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Project 2 — Compliance RAG */}
+      {/* Project 2 — Agentic AI Email Generator */}
       <section id="project-2" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-amber-700 font-medium">
+              No. 02 · Built with n8n + Claude
+            </p>
+            <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
+              Agentic AI Email Generator
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["n8n", "Claude", "Railway", "Supabase", "Resend", "Cron"].map((t) => (
+                <Tag key={t} label={t} />
+              ))}
+            </div>
+            <a
+              href="https://agentic-ai-email-generator.lovable.app"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-amber-600 text-white hover:bg-amber-700 transition-colors text-xs font-medium"
+            >
+              Live app ↗
+            </a>
+          </div>
+
+          <div className="md:col-span-8 space-y-6">
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">
+              A fully autonomous agent that runs every morning at{" "}
+              <strong className="text-stone-900">8am ET</strong> — searches fresh
+              job postings against my target keywords, has Claude filter and rank
+              them for fit, and delivers a clean, ready-to-skim digest straight
+              to my inbox. Built in n8n, deployed on Railway, persisted in
+              Supabase, sent via Resend.
+            </p>
+
+            <ul className="space-y-2.5 text-sm md:text-base text-stone-700 leading-relaxed">
+              <li className="flex gap-3"><span className="text-amber-500">▸</span>Cron-triggered daily — zero manual touch, runs while I sleep</li>
+              <li className="flex gap-3"><span className="text-amber-500">▸</span>Claude scores every posting on relevance, dedupes against yesterday's run</li>
+              <li className="flex gap-3"><span className="text-amber-500">▸</span>Self-hosted n8n on Railway — own the workflow, no per-execution SaaS fees</li>
+              <li className="flex gap-3"><span className="text-amber-500">▸</span>Built to demonstrate AI fluency across orchestration tools, not just one</li>
+            </ul>
+
+            <div className="mt-8 p-6 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200">
+              <p className="text-xs uppercase tracking-wider text-amber-700 font-semibold mb-2">
+                Why a second job-search tool
+              </p>
+              <p className="text-sm text-stone-700 leading-relaxed">
+                Project 01 is a Python pipeline I trigger on-demand. This one
+                proves the same outcome can be built agentically in a visual
+                workflow tool — same problem, different stack, deliberately. AI
+                fluency means picking the right tool, not defaulting to code.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <GradientDivider />
+
+      {/* Project 3 — Compliance RAG */}
+      <section id="project-3" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+        <div className="grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-emerald-700 font-medium">
-              No. 02 · Built with Claude
+              No. 03 · Built with Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               Compliance RAG Chatbot
@@ -416,12 +475,12 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Project 3 — Aura */}
-      <section id="project-3" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      {/* Project 4 — Customer Service Triage */}
+      <section id="project-4" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-indigo-700 font-medium">
-              No. 03 · Built with Claude
+              No. 04 · Built with Claude
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               AI Customer Service Triage
@@ -466,12 +525,12 @@ function PortfolioPage() {
 
       <GradientDivider />
 
-      {/* Project 4 — Aura */}
-      <section id="project-4" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
+      {/* Project 5 — Aura */}
+      <section id="project-5" className="mx-auto max-w-6xl px-6 py-20 md:py-28 scroll-mt-8">
         <div className="grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <p className="text-xs uppercase tracking-[0.3em] text-rose-700 font-medium">
-              No. 04 · Built with Lovable
+              No. 05 · Built with Lovable
             </p>
             <h2 className="mt-4 text-3xl md:text-4xl font-light leading-tight">
               Aura — Makeup Assistant
