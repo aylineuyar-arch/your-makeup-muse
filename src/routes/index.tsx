@@ -374,6 +374,20 @@ function PortfolioPage() {
               Supabase, sent via Resend.
             </p>
 
+            <figure>
+              <img
+                src={emailGenImg}
+                alt="Live countdown to next email release and tracked job titles"
+                className="w-full rounded-lg shadow-lg ring-1 ring-amber-200"
+                loading="lazy"
+              />
+              <figcaption className="mt-3 text-xs text-stone-500 italic">
+                Live countdown to the next 8am ET email run + the exact job titles the agent tracks.
+              </figcaption>
+            </figure>
+
+
+
             <div className="grid grid-cols-3 gap-4 border-y-2 border-amber-400 py-6">
               {[
                 ["8am ET", "Daily cron trigger"],
