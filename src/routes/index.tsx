@@ -354,7 +354,7 @@ function PortfolioPage() {
               ))}
             </div>
             <a
-              href="https://agentic-ai-email-generator.lovable.app"
+              href="https://muse-agent-transfer.lovable.app"
               target="_blank"
               rel="noreferrer"
               className="mt-8 inline-flex items-center gap-2 px-3 py-2 rounded-full bg-amber-600 text-white hover:bg-amber-700 transition-colors text-xs font-medium"
