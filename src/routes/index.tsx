@@ -56,6 +56,9 @@ const TOOL_LOGOS: Record<string, ToolLogo> = {
   RAG: { icon: Database, bg: "bg-emerald-50 ring-emerald-200", iconClass: "text-emerald-700" },
   NLP: { icon: MessageSquare, bg: "bg-cyan-50 ring-cyan-200", iconClass: "text-cyan-700" },
   Triage: { icon: Workflow, bg: "bg-indigo-50 ring-indigo-200", iconClass: "text-indigo-700" },
+  n8n: { src: "https://cdn.simpleicons.org/n8n/EA4B71", bg: "bg-pink-50 ring-pink-200" },
+  Resend: { src: "https://cdn.simpleicons.org/resend/000000", bg: "bg-stone-50 ring-stone-200" },
+  Supabase: { src: "https://cdn.simpleicons.org/supabase/3FCF8E", bg: "bg-emerald-50 ring-emerald-200" },
 };
 
 function ToolIcons({ tools }: { tools: string[] }) {
@@ -157,9 +160,9 @@ function PortfolioPage() {
         {/* Project navigation bubbles */}
         <div className="mt-14 lg:-mx-16 xl:-mx-24">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500 font-medium mb-4">
-            Four live projects · jump to →
+            Five live projects · jump to →
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
             <a href="#project-1" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-orange-200 hover:border-orange-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <div className="flex items-center justify-between">
                 <span className="text-xs uppercase tracking-wider text-orange-700 font-semibold">No. 01</span>
@@ -207,6 +210,18 @@ function PortfolioPage() {
               <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Aura — Makeup Assistant</div>
               <div className="mt-1 text-xs text-stone-600">Lovable · React · Claude</div>
               <ToolIcons tools={["Lovable", "React", "TypeScript", "Claude"]} />
+            </a>
+            <a href="https://agentic-ai-email-generator.lovable.app" target="_blank" rel="noreferrer" className="block p-5 rounded-2xl bg-white/80 backdrop-blur border-2 border-amber-200 hover:border-amber-400 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-wider text-amber-700 font-semibold">No. 05</span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  Live
+                </span>
+              </div>
+              <div className="mt-3 text-base font-medium text-stone-900 leading-snug whitespace-nowrap">Agentic AI Email Generator</div>
+              <div className="mt-1 text-xs text-stone-600">Claude · n8n · Railway · 8am ET</div>
+              <ToolIcons tools={["Claude", "n8n", "Railway", "Resend", "Supabase"]} />
             </a>
           </div>
         </div>
