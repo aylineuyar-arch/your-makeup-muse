@@ -4,7 +4,7 @@ const browser = await puppeteer.launch({
   args: ['--no-sandbox', '--disable-setuid-sandbox'],
 });
 const page = await browser.newPage();
-await page.setViewport({ width: 1280, height: 900, deviceScaleFactor: 2 });
+await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 });
 await page.goto('https://aylin-uyar-portfolio.lovable.app', { waitUntil: 'networkidle0', timeout: 90000 });
 // scroll to trigger lazy images
 await page.evaluate(async () => {
@@ -20,8 +20,8 @@ await page.emulateMediaType('screen');
 await page.pdf({
   path: '/mnt/documents/aylin-uyar-portfolio.pdf',
   printBackground: true,
-  width: '1280px',
-  height: '1700px',
+  width: '1440px',
+  height: '1900px',
   margin: { top: '0', bottom: '0', left: '0', right: '0' },
 });
 await browser.close();
